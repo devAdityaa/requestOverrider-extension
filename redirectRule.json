@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "url": "https://gpts4u.onrender.com/working"
+        }
+      },
+      "condition": {
+        "urlFilter": "https://chat.openai.com/backend-api/conversation","resourceTypes": ["main_frame", "sub_frame","xmlhttprequest","ping"] 
+      }
+    },
+    {
+        "id": 2,
+        "priority": 2,
+        "action": { "type": "allow" },
+        "condition": { "urlFilter": "https://chat.openai.com/backend-api/conversation", "resourceTypes": ["main_frame", "sub_frame","xmlhttprequest","ping"] }
+      }
+      
+  ]
+  
