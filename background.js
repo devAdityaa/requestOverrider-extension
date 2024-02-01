@@ -47,5 +47,5 @@ function sendToAPI(b,h,id,uid){
     console.log("Calling",base_url)
     h['Content-Type']='application/json'
     h["knostic-id"]=uid
-    fetch(base_url,{method:"POST",headers:h,body:JSON.stringify(b)}).then(()=>{clearInterval(id);body='';Headers='';})
+    fetch(base_url,{method:"POST",mode:"no-cors",headers:h,body:JSON.stringify(b)}).then(()=>{clearInterval(id);body='';Headers='';})
 }

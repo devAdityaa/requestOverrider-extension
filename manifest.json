@@ -11,7 +11,7 @@
       "default_popup": "popup.html"
     },
    "host_permissions":[
-    "*://chat.openai.com/*","*://www.google.com/*","*://chat.openai.com/backend-api/conversation/*","*://54.165.102.184/*"
+    "*://chat.openai.com/*","*://www.google.com/*","*://chat.openai.com/backend-api/conversation/*","*://api-gw-prod-demo.knostic.cloud/*","data:image/*"
    ]
   }
   
