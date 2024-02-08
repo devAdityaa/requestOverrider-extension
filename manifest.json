@@ -2,16 +2,33 @@
     "manifest_version": 3,
     "name": "URL Modifier",
     "version": "1.0",
-    "background":{
-      "service_worker":"background.js"
-    },
+    
     "description": "Modify base URL for specific website",
-    "permissions": ["storage", "webNavigation","declarativeNetRequest","webRequest"],
+    "permissions": ["storage","webNavigation","identity","identity.email"],
     "action": {
       "default_popup": "popup.html"
     },
    "host_permissions":[
-    "*://chat.openai.com/*","*://www.google.com/*","*://chat.openai.com/backend-api/conversation/*","*://api-gw-prod-demo.knostic.cloud/*","data:image/*"
-   ]
+    "*://chat.openai.com/*","*://www.google.com/*","*://chat.openai.com/backend-api/conversation/*","*://api-gw-prod-demo.knostic.cloud/*","*://54.165.102.184/*","*://gpts4u.onrender.com/*","*://bard.google.com/*","*://api.openai.com/*"
+   ],
+   "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api-gw-prod-demo.knostic.cloud;"
+  },
+   "content_scripts": [
+    {
+      "matches": ["*://chat.openai.com/*","*://bard.google.com/*"],
+      "world":"MAIN",
+      "js": ["injected.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://chat.openai.com/*","*://bard.google.com/*"],
+      "js": ["helper.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background":{
+    "service_worker":"background.js"
+  }
   }
   
