@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "URL Modifier",
+    "name": "GPT Hijacker",
     "version": "1.0",
     
     "description": "Modify base URL for specific website",
@@ -9,10 +9,12 @@
       "default_popup": "popup.html"
     },
    "host_permissions":[
-    "*://chat.openai.com/*","*://www.google.com/*","*://chat.openai.com/backend-api/conversation/*","*://api-gw-prod-demo.knostic.cloud/*","*://54.165.102.184/*","*://gpts4u.onrender.com/*","*://bard.google.com/*","*://api.openai.com/*"
+    "*://chat.openai.com/*","*://www.google.com/*","*://chat.openai.com/backend-api/conversation/*","*://api-gw-prod-demo.knostic.cloud/*","*://bard.google.com/*","*://api.openai.com/*"
    ],
-   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api-gw-prod-demo.knostic.cloud;"
+   "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
   },
    "content_scripts": [
     {
